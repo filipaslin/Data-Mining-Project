@@ -25,18 +25,13 @@ class BPRMF(object):
         #self.lr_decay = args.lr_decay
         self.clip=0.01
         self.p_score=tf.constant(p_score,dtype=tf.float32)
-        print("P_score:", self.p_score)
         self.p_score = tf.clip_by_value(
             tf.constant(p_score,dtype=tf.float32), clip_value_min=self.clip, clip_value_max=1.0)
-        print("P_score:", self.p_score)
         self.emb_dim = args.embed_size
         self.batch_size = args.batch_size
 
         self.weight_size = eval(args.layer_size)
         self.n_layers = len(self.weight_size)
-        print("Weight size:", self.weight_size)
-        print("Nr of layers:", self.n_layers)
-        input()
 
         self.regs = eval(args.regs)
         self.decay = self.regs[0]
