@@ -11,6 +11,6 @@ Project in course Data Mining.
 6. Gör om steg 3-5 för BPRFM_t, BPRFM_ut och BPRFM_neural
 
 Sidospår:
-1. Gör flow chart
+1. Gör flow chart (Marcus)
 2. Skapa alla slides till presentationen
 3. DB-scan?
