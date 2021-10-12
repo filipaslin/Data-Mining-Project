@@ -55,7 +55,7 @@ for i in range(user_embedding.shape[1]):
 # Split to parameters and target i.e. X and y
 target = "B"
 X, y = df.loc[:, df.columns != target], df[target]
-#Split to train and test? 
+# Split to train and test? 
 
 #Normalize
 X_normalized = preprocessing.normalize(X, axis=0)
