@@ -41,16 +41,18 @@ user_attributes = user_attributes.drop(['age_1', 'age_2', 'age_3', 'age_4', 'mal
 
 # Load dataset of user_embeddings. 
 # #Change version variable to change version of embedding that is used
-version = 0
-user_embeddings = ["user_embedding", "user_embedding_t", "user_embedding_ut", "user_embedding_neural"]
-user_embedding = np.load("Gossip/" + user_embeddings[version] + ".npy")
-user_embedding = pd.DataFrame(user_embedding)
+version = 3
+
+user_embeddings = ["user_embedding_na","user_embedding", "user_embedding_t", "user_embedding_ut", "user_embedding_neural"]
+df = user_attributes.copy()
+if version != 0:
+    user_embedding = np.load("Gossip/" + user_embeddings[version] + ".npy")
+    user_embedding = pd.DataFrame(user_embedding)
 
 ##################################################################################################
 # Merge into one dataset
-df = user_attributes.copy()
-for i in range(user_embedding.shape[1]):
-    df['embedding_'+str(i)] = user_embedding.iloc[:, i]
+    for i in range(user_embedding.shape[1]):
+        df['embedding_'+str(i)] = user_embedding.iloc[:, i]
 
 # Split to parameters and target i.e. X and y
 target = "B"
@@ -70,6 +72,9 @@ intercept = reg.intercept_
 
 # Save Linear Regression model for selected user embedding to a file
 joblib.dump(reg, 'Models/lin_reg_with_'+user_embeddings[version]+'.pkl') 
+#np.save('Models/lin_reg_with_'+user_embeddings[version]+'_DATA.npy', user_attributes)
+user_attributes.to_pickle('Models/lin_reg_with_'+user_embeddings[version]+'_DATA.pd')
+
 # and later you can load it
 #reg = joblib.load('filename.pkl')
 
