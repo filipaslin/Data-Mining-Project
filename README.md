@@ -1,7 +1,7 @@
 # Data-Mining-Project
 Project in course Data Mining.
 
-Some parys of the data and the code are taken from: https://github.com/GitHubLuCheng/Causal-Understanding-of-Fake-News-Dissemination
+Parts of the data and the code are taken from: https://github.com/GitHubLuCheng/Causal-Understanding-of-Fake-News-Dissemination
 
 Folder "Gossip" contains the data.
 
