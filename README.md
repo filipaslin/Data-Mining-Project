@@ -1,32 +1,14 @@
 # Data-Mining-Project
 Project in course Data Mining.
 
+Some parys of the data and the code are taken from: https://github.com/GitHubLuCheng/Causal-Understanding-of-Fake-News-Dissemination
 
-# ToDo
-1. Köra BPRFM_ut för att få ut user_embedding_ut FILIP
-2. Köra Linear Regression med user_embedding_ut Eric
-3. Köra Linear Regression helt utan user_embedding Eric
+Folder "Gossip" contains the data.
 
+Run user_attribute.py and create_bipartite.py to run preprocessing of data.
 
-5. Skriva ett script som plottar alla tre modeller Eric
+The files BPRMF.py, BPRMF_t.py, BPRMF_ut.py and BPRMF_neural.py reads from the preprocessed data and outputs user embeddings.
 
-7. Samla ny data från twitter.(För hand?)
-8. Skriva ett script som "predictar" på den nya datan
+The file model_train.py trains a Linear Regression and writes the model to a file in the folder "Models".
 
-
-8. Göra slides utifrån upplägget på slide 2
-
-
-
-
-
-Sidospår:
-1. Gör flow chart (Marcus)
-2. Skapa alla slides till presentationen
-3. DB-scan?
-
-# KLART
-1. KLART Skapa dataset med user attributes, antal delningar av fake news och antal delningar av true news
-2. KLART(Tror inte det behövs?) Se till så att datasetet är i korrekt ordning/indexerat
-3. KLART Mergea datasetet med user_embedding. Börja med user_embedding från BPRMF
-4. KLART Fit Linear Regression till datasetet
+The file plot_models.py plots the coefficients from the models in the folder "Models".
