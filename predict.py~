@@ -1,0 +1,12 @@
+import pandas as pd
+import numpy as np
+from sklearn.linear_model import LinearRegression
+from sklearn import preprocessing
+import joblib
+import matplotlib.pyplot as plt
+
+
+user_attributes = pd.read_csv("Gossip/susceptability_predict.txt", sep=" ", header=None, index_col=False)
+
+
+print(user_attributes)

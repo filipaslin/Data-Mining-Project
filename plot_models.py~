@@ -1,0 +1,15 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+
+version = 2
+user_embeddings = ["user_embedding", "user_embedding_t", "user_embedding_ut", "user_embedding_neural"]
+
+
+path = 'Models/lin_reg_with_'+user_embeddings[version]+'.pkl'
+
+
+# Load Movel
+model = np.load(path)
+
+print(model)

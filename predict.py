@@ -33,20 +33,25 @@ intercept = model.intercept_
 #print('\nBeta Coefficients: ')
 #print(beta)
 
-
+#print(beta)
+#input()
 predict_data = {}
 
 #print('\nSusceptability: ')
 for user in range(len(user_attributes)):
     
     user_data = user_attributes.iloc[user].to_numpy()
+#    print('Intercept: ', intercept)
     susceptability = intercept
     for i in range(9):
         susceptability += beta[i]*user_data[i]
-        susceptability = 1 / ( 1 + np.exp(susceptability))
+        #print('Susceptability: ', susceptability)
+        #input()
+    susceptability = 1 / ( 1 + np.exp(-susceptability))
     #print(susceptability)
     usr = users[user]
     predict_data[usr] = susceptability
+
 
 keys = predict_data.keys()
 values = predict_data.values()
